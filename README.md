@@ -1,2 +1,4 @@
-# Anti Heike
-a (very) naive way to detect forge hacks like doomsday for your forge server
+# Anti（反） Heike（嘿客）
+一个十分愚蠢的我的手艺锻造1.18模组用于检测像Doomsday这种锻造注射作弊客户端
+
+任何小朋友都可以在阅读代码之后的五分钟内编写出绕过Mod，只适合检测网易我的世界无脑跟风教学注入挂逼

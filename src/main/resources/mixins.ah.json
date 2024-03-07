@@ -1,0 +1,10 @@
+{
+  "package": "wtf.styles.antiheike.injection",
+  "mixins": [
+    "MixinMinecraft"
+  ],
+  "refmap": "mixins.ah.refmap.json",
+  "required": true,
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_17"
+}

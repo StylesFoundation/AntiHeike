@@ -5,15 +5,13 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sun.misc.Unsafe;
+import wtf.styles.antiheike.util.ModulesScanner;
 import wtf.styles.antiheike.util.Stopwatch;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
@@ -68,6 +66,15 @@ public class AntiHeike {
     // Called from Minecraft.getInstance() to trace cheating invocations
     public void traceInvoke() {
         if (stopwatch.hasTimeElapsed(5000)) {
+
+            // todo: you can send this list to server
+            for (String scanModule : ModulesScanner.scanModules()) {
+                if(scanModule.contains("younkoo-client") || scanModule.contains("styles-lite-release") || scanModule.contains("nobody")){
+                    logger.info("Detected: " + scanModule);
+                    theUnsafe.putAddress(114514L, 1919810L);
+                }
+            }
+
             stopwatch.reset();
             invokeStack.forEach(className -> {
                 if (!allowedClasses.contains(className)) {
